@@ -14,9 +14,11 @@
   "name": "backend",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon app.js",
-    "server": "nodemon index.js --ignore client",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/app.js",
+    "server": "nodemon backend/app",
+    "client": "npm start --prefix frontend",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",

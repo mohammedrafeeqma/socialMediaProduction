@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 const createError = require('http-errors');
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
@@ -39,6 +40,15 @@ app.use('/api/event/', eventRoute)
 app.use('/api/notification',notificationRoute)
 
 
+const __dirname = path.resolve()
+
+app.use(express.static(path.join(__dirname, '/frontend/build')))
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+  )
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));
@@ -54,6 +64,7 @@ app.use(function(err, req, res, next) {
     res.json('error');
   });
 
-app.listen(3001,()=>{
+  const PORT = process.env.PORT || 3001
+app.listen(PORT,()=>{
     console.log(`Server is running`);
 })
