@@ -40,7 +40,6 @@ app.use('/api/event/', eventRoute)
 app.use('/api/notification',notificationRoute)
 
 
-const __dirname = path.resolve()
 
 app.use(express.static(path.join(__dirname, '/frontend/build')))
 
