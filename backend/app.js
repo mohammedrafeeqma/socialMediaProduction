@@ -14,6 +14,7 @@ const conversationRoute = require('./routes/conversation')
 const messageRoute = require('./routes/message')
 const eventRoute = require('./routes/events')
 const notificationRoute = require('./routes/notification')
+console.log(__dirname);
 
 dotenv.config()
  
@@ -41,10 +42,9 @@ app.use('/api/notification',notificationRoute)
 
 
 
-app.use(express.static(path.join(__dirname, '/frontend/build')))
-
+app.use(express.static(path.join(__dirname,'../', '/frontend/build')))
   app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname,'../', 'frontend', 'build', 'index.html'))
   )
 
 
