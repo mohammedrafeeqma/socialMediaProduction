@@ -11,6 +11,7 @@ import Events from "./pages/user/Events";
 import CreateEvent from "./pages/user/CreateEvent";
 import Reportspage from "./components/admin/Reportspage";
 import NotFound from "./pages/user/NotFound";
+import Sample from "./components/Sample";
 function App() {
   return (
     <Router>
@@ -36,6 +37,7 @@ function App() {
           {/* <Route path="/events/:all" element={<Events/>} /> */}
           <Route path="/createevents" element={<CreateEvent/>} />
           <Route path="/404" element={<NotFound/>} />
+          <Route path="/sample" element={<Sample/>} />
         </Route>
         
 

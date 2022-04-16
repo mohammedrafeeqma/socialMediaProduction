@@ -63,7 +63,7 @@ function Leftbar() {
       </div>
       <div onClick={()=>navigate('/admin/analystic')} className={classes.item}>
         <BarChartOutlined className={classes.icon} />
-        <Typography className={classes.text}>Analystics</Typography>
+        <Typography className={classes.text}>Analytics</Typography>
       </div>
       <div onClick={logoutHandler} className={classes.item}>
         <LogoutOutlined className={classes.icon} />
