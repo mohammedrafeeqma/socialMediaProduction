@@ -49,6 +49,7 @@ function ChatLeft({conversations, setCurrentChat, currentChat}) {
     <Container >
         {conversations.map((c)=>{
             
+            
             return(
                 <div className={classes.eachDiv} key={c._id} onClick={()=>setCurrentChat(c)}>
                 <Conv  conversation={c}/>

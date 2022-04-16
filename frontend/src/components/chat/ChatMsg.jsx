@@ -147,7 +147,7 @@ function ChatMsg({ currentChat, onlineUsers, setOnlineUsers }) {
           {currentChat ? (
             <div className={classes.chatBoxTop}>
               <div style={{height:'70vh', overflowY:'scroll'}} >
-                {messages.map((m) => {
+                {messages?.map((m) => {
                   return (
                     <Message
                       key={m._id}
