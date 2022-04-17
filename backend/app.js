@@ -13,7 +13,8 @@ const conversationRoute = require('./routes/conversation')
 const messageRoute = require('./routes/message')
 const eventRoute = require('./routes/events')
 const notificationRoute = require('./routes/notification')
-const cors = require('cors')
+const cors = require('cors');
+const helmet = require('helmet');
 console.log(path.join(__dirname, '../frontend/build'));
 
 dotenv.config()
@@ -30,6 +31,8 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json()) // it is a body parser when you make post request it parse
 app.use(morgan('common'))
 app.use(cors())
+
+app.use(helmet())
 
 app.use('/api/user' , userRoute)
 app.use('/api/auth', authRoute)
